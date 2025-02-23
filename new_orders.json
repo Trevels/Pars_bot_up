@@ -1,0 +1,9 @@
+[
+    {
+        "Name": "Web Scraping",
+        "Fixed_price": "Hourly: $8.00 - $25.00",
+        "Url": "https://www.upwork.com/jobs/Web-span-class-highlight-Scraping-span_~021893490568365183183/?referrer_url_path=/nx/search/jobs/",
+        "Task": "Create a spreadsheet for wholesale suppliers of the following products in Australia:\n\nWholesale Egg Suppliers\nWholesale Packaged Seafood Suppliers\nWholesale Packaged Meat Suppliers\nWholesale Ready to Eat Meal Suppliers\nWholesale Food and Beverage Distributors\nWholesale Milk Suppliers\n\nBusiness Name\nBusiness Email\nBusiness Phone\nAccounting System used\nInventory System used\nOn Fresho platform yes/no\nOn Ordermentum platform yes/no\nNumber of Woolworths Australia Stores that stock this company's products\nKey Personell First Name (from LinkedIn)\nKey Personell Last Name (from LinkedIn)\n\nI need as many good quality entries as possible.",
+        "Skills_Expertise": " Data ScrapingData MiningData ExtractionData EntryBeautiful SoupSeleniumPythonWeb CrawlingScrapy "
+    }
+]
