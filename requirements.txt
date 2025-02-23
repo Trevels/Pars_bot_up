@@ -1,0 +1,7 @@
+aiogram
+json
+dotenv
+os
+cloudscraper
+bs4
+deep_translator
