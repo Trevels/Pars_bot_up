@@ -1,12 +1,5 @@
 [
     {
-        "Name": "DevOps/Infrastructure Engineer Needed for Web Scraping Deployment on GCP",
-        "Fixed_price": "Hourly: $8.00 - $10.00",
-        "Url": "https://www.upwork.com/jobs/DevOps-Infrastructure-Engineer-Needed-for-Web-span-class-highlight-Scraping-span-Deployment-GCP_~021893489213969895631/?referrer_url_path=/nx/search/jobs/",
-        "Task": "Seeking a DevOps or Infrastructure Engineer for a consultation on deploying a web scraping script in a GCP cloud environment. \nThe script should run at regular intervals and store the results in cloud storage.",
-        "Skills_Expertise": " Web ScrapingCI/CDDevOpsAutomation "
-    },
-    {
         "Name": "Open Source Contributor Needed for OAuth2 Authentication & Authorization",
         "Fixed_price": "Est. budget: $500.00",
         "Url": "https://www.upwork.com/jobs/Open-Source-Contributor-Needed-for-OAuth2-Authentication-Authorization_~021893487217610873510/?referrer_url_path=/nx/search/jobs/",
@@ -75,5 +68,19 @@
         "Url": "https://www.upwork.com/jobs/Web-span-class-highlight-Scraping-span_~021893490568365183183/?referrer_url_path=/nx/search/jobs/",
         "Task": "Create a spreadsheet for wholesale suppliers of the following products in Australia:\n\nWholesale Egg Suppliers\nWholesale Packaged Seafood Suppliers\nWholesale Packaged Meat Suppliers\nWholesale Ready to Eat Meal Suppliers\nWholesale Food and Beverage Distributors\nWholesale Milk Suppliers\n\nBusiness Name\nBusiness Email\nBusiness Phone\nAccounting System used\nInventory System used\nOn Fresho platform yes/no\nOn Ordermentum platform yes/no\nNumber of Woolworths Australia Stores that stock this company's products\nKey Personell First Name (from LinkedIn)\nKey Personell Last Name (from LinkedIn)\n\nI need as many good quality entries as possible.",
         "Skills_Expertise": " Data ScrapingData MiningData ExtractionData EntryBeautiful SoupSeleniumPythonWeb CrawlingScrapy "
+    },
+    {
+        "Name": "Website Scraping and Search Box Implementation Developer",
+        "Fixed_price": "Est. budget: $100.00",
+        "Url": "https://www.upwork.com/jobs/Website-span-class-highlight-Scraping-span-and-Search-Box-Implementation-Developer_~021893510197969049211/?referrer_url_path=/nx/search/jobs/",
+        "Task": "We are seeking a highly responsive and versatile developer to assist in scraping data from a specific website. The project involves creating a search box that allows users to filter out irrelevant information from source site while making sekected data accessible. The ideal candidate must be responsive and can turn project around in 2 days - have experience with web scraping techniques and a strong understanding of user interface design. this is just a test to find a good long term developer to join my global team.",
+        "Skills_Expertise": " Data ScrapingJavaScriptHTMLPHPPython "
+    },
+    {
+        "Name": "DevOps/Infrastructure Engineer Needed for Web Scraping Deployment on GCP",
+        "Fixed_price": "Hourly: $8.00 - $10.00",
+        "Url": "https://www.upwork.com/jobs/DevOps-Infrastructure-Engineer-Needed-for-Web-span-class-highlight-Scraping-span-Deployment-GCP_~021893489213969895631/?referrer_url_path=/nx/search/jobs/",
+        "Task": "Seeking a DevOps or Infrastructure Engineer for a consultation on deploying a web scraping script in a GCP cloud environment. \nThe script should run at regular intervals and store the results in cloud storage.",
+        "Skills_Expertise": " Web ScrapingCI/CDDevOpsAutomation "
     }
 ]
