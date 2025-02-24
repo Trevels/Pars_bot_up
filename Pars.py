@@ -2,11 +2,15 @@ import json
 import cloudscraper
 from bs4 import BeautifulSoup
 
-
+#вношу потрібні(?) зміни(добавляю хедери)
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+}
+#-----------------------------
 def collect_orders():
     url = "https://www.upwork.com/nx/search/jobs/?nbs=1&q=scrape%20data&is_sts_vector_search_result=false&nav_dir=pop&page=1"
     scraper = cloudscraper.create_scraper()
-    response = scraper.get(url)
+    response = scraper.get(url, headers=headers)
     #додаткова перевірка
     print("Response status:", response.status_code)
     print("Response headers:", response.headers)
