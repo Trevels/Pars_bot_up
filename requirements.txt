@@ -3,4 +3,3 @@ dotenv
 cloudscraper
 bs4
 deep_translator
-lxml

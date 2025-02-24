@@ -7,7 +7,7 @@ def collect_orders():
     url = "https://www.upwork.com/nx/search/jobs/?nbs=1&q=scrape%20data&is_sts_vector_search_result=false&nav_dir=pop&page=1"
     scraper = cloudscraper.create_scraper()
     response = scraper.get(url)
-    soup = BeautifulSoup(response.text, 'lxml')
+    soup = BeautifulSoup(response.text, 'html.parser')
 
     blook = soup.find('div', class_='span-12 span-lg-9')
     all_orders = blook.find_all("article", class_="job-tile cursor-pointer px-md-4 air3-card air3-card-list px-4x")
