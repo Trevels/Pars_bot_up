@@ -11,11 +11,8 @@ from aiogram.filters import Command
 import asyncio
 import json
 
-token = os.getenv("token")
-my_chat_id =int(os.getenv("my_chat_id", 0))
 
-
-bot = Bot(token=token)
+bot = Bot(token=os.getenv("token"))
 dp = Dispatcher()
 one_time_message = True#відповідає за вихід з циклу а також щоб неповторювався виклик одної і той самої дії(коли пишимо повідомлення)
 
@@ -23,7 +20,7 @@ one_time_message = True#відповідає за вихід з циклу а т
 async def start_command(message: Message):
     global one_time_message
 
-    if my_chat_id == message.chat.id:
+    if int(os.getenv("my_chat_id", 0)) == message.chat.id:
         start_buttons = ['Українською мовою', 'in English']
         keyboard = types.ReplyKeyboardMarkup(
             keyboard=[[types.KeyboardButton(text=button) for button in start_buttons]],
@@ -39,7 +36,7 @@ async def start_command(message: Message):
 @dp.message()
 async def handle_text(message: Message):
     global one_time_message
-    if my_chat_id == message.chat.id and not one_time_message:
+    if int(os.getenv("my_chat_id", 0)) == message.chat.id and not one_time_message:
         one_time_message = True#для того щоб цикел працював тільки по одному колу
         if message.text == 'Українською мовою' or message.text == 'in English':
             while one_time_message:
