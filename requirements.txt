@@ -1,6 +1,6 @@
-aiogram
-dotenv
-cloudscraper
-bs4
-deep_translator
-lxml
+aiogram==3.18.0
+python-dotenv==1.0.1
+cloudscraper==1.2.71
+beautifulsoup4==4.13.3
+deep_translator==1.9.1
+lxml==5.3.1
