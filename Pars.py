@@ -12,6 +12,7 @@ def collect_orders():
     url = "https://www.upwork.com/nx/search/jobs/?nbs=1&q=scrape%20data&is_sts_vector_search_result=false&nav_dir=pop&page=1"
     scraper = cloudscraper.create_scraper()
     response = scraper.get(url, headers=headers)
+    print("Response status:", response.status_code)
     
     try:#для постійной обробки працює некорктно мб try
         soup = BeautifulSoup(response.text, 'lxml')
@@ -57,7 +58,6 @@ def collect_orders():
                 json.dump(existing_orders, f, ensure_ascii=False, indent=4)
     except Exception as e:
         print(f"Erorr :{e}")
-        print("Response status:", response.status_code)
         print("Response headers:", response.headers)
         print("Response text:", response.text[:2000])  # Виводимо 2000 символів HTML
 
