@@ -1,5 +1,4 @@
-from Pars import collect_orders, Rewrite_order
-from translation import translate_message
+from Pars import collect_orders, Rewrite_order,translate_message
 
 import os
 from dotenv import load_dotenv
@@ -9,7 +8,6 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.types import Message 
 from aiogram.filters import Command
 import asyncio
-import json
 
 
 bot = Bot(token=os.getenv("token"))
@@ -40,28 +38,22 @@ async def handle_text(message: Message):
         one_time_message = True#для того щоб цикел працював тільки по одному колу
         if message.text == 'Українською мовою' or message.text == 'in English':
             while one_time_message:
-                
-                if collect_orders():
+                data = collect_orders()
+                if data:
                     if message.text == 'Українською мовою':
-                        translate_message()
-                        with open("translated_data.json", encoding="utf-8") as file:
-                            data = json.load(file)
-
-                    elif message.text == 'in English':
-                        with open("new_orders.json", encoding="utf-8") as file:
-                            data = json.load(file)    
+                        data=translate_message(data)
 
                     for item in data:    
-                        Name = (item.get("Name", ""))
-                        Fixed_price = item.get("Fixed_price", "")
-                        Url = item.get("Url", "")
-                        Task = item.get("Task", "")
-                        Skills_Expertise = item.get("Skills_Expertise", "")
+                        Name = item["Name"]
+                        Fixed_price = item["Fixed_price"]
+                        Url = item["Url"]
+                        Task = item["Task"]
+                        Skills_Expertise = item["Skills_Expertise"]
 
                         card = f"{Name}\n  {Fixed_price}\n  {Url}\n   {Task}\n  {Skills_Expertise}\n"
                         await message.answer(card)
                 else:
-                    print(f"нових заказів немає")
+                    print(f"нових заказів немає ")
                 await asyncio.sleep(300)  
 
 
