@@ -6,6 +6,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.types import Message
 from aiogram.filters import Command
 import asyncio
+import random
 
 load_dotenv()
 
@@ -29,7 +30,7 @@ async def check_orders(message: Message, lang: str):
         else:
             print(f"нових заказів немає ")
 
-        await asyncio.sleep(200)
+        await asyncio.sleep(random.randint(180, 220))
 
 @dp.message(Command("start"))
 async def start_command(message: Message):
@@ -55,8 +56,9 @@ async def handle_text(message: Message):
     global one_time_message
     if int(os.getenv("my_chat_id", 0)) == message.chat.id:
         if message.text in ['Українською мовою', 'in English']:
-            if one_time_message:  # Якщо є активний цикл, зупиняємо його
+            if one_time_message:
                 one_time_message.cancel()
+                await asyncio.sleep(1)  # Додаємо паузу, щоб завершився попередній цикл
             one_time_message = asyncio.create_task(check_orders(message, message.text))  # Створюємо новий цикл
     else:
         await message.answer("This bot is not for you")
