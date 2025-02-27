@@ -43,7 +43,7 @@ def collect_orders(scraper= cloudscraper.create_scraper()):
             data = {
                 'Name': orders.find_all("div", class_="air3-line-clamp is-clamped")[0].text,
                 'Fixed_price': Fixed_price,
-                'Url': f"https://www.upwork.com{orders.find_all('div', class_='air3-line-clamp is-clamped')[0].find('a').get('href')}",
+                'Url': f"https://{os.getenv("u")}{orders.find_all('div', class_='air3-line-clamp is-clamped')[0].find('a').get('href')}",
                 'Task': orders.find_all("div", class_="air3-line-clamp is-clamped")[1].text.strip(),
                 'Skills_Expertise': orders.find("div", class_="air3-token-container").text if orders.find("div", class_="air3-token-container") else ""
             }
