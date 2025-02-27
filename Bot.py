@@ -3,7 +3,7 @@ import cloudscraper
 import os
 from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher, types
-from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import Message
 from aiogram.filters import Command
 import asyncio
 
@@ -11,11 +11,11 @@ load_dotenv()
 
 bot = Bot(token=os.getenv("token"))
 dp = Dispatcher()
-active_tasks = {}  # Замість глобальної змінної, зберігаємо запущені цикли для кожного користувача
+one_time_message = None  # буде зберігати об'єкт запущеного завдання
 
 async def check_orders(message: Message, lang: str):
-    chat_id = message.chat.id
-    while chat_id in active_tasks:  # Якщо користувач не відключився
+    global one_time_message
+    while one_time_message:  # цикл працює поки активний
         scraper = cloudscraper.create_scraper()
         data = collect_orders(scraper)
 
@@ -24,75 +24,42 @@ async def check_orders(message: Message, lang: str):
                 data = translate_message(data)
 
             for item in data:
-                Name = item["Name"]
-                Fixed_price = item["Fixed_price"]
-                Task = item["Task"]
-                Skills_Expertise = item["Skills_Expertise"]
-                Url = item["Url"]
-
-                # Формуємо текст без прямого посилання
-                card_text = (
-                    f"🔔 Новий фріланс-проєкт!\n\n"
-                    f"📌 {Name}\n"
-                    f"💰 {Fixed_price}\n"
-                    f"📝 {Task}\n"
-                    f"🎯 {Skills_Expertise}\n\n"
-                    f"🌍 Перегляньте деталі за посиланням:"
-                )
-
-                # Додаємо кнопку "Переглянути"
-                keyboard = InlineKeyboardMarkup(
-                    inline_keyboard=[
-                        [InlineKeyboardButton(text="🔗 Переглянути", callback_data=f"view_{Url}")]
-                    ]
-                )
-
-                await message.answer(card_text, reply_markup=keyboard)
+                card = f"{item['Name']}\n  {item['Fixed_price']}\n  {item['Url']}\n   {item['Task']}\n  {item['Skills_Expertise']}\n"
+                await message.answer(card)
         else:
-            print(f"Нових замовлень немає для {chat_id}")
+            print(f"нових заказів немає ")
 
-        await asyncio.sleep(200)  # Чекаємо 200 секунд перед новою перевіркою
-
-@dp.callback_query()
-async def handle_callback(callback_query: types.CallbackQuery):
-    """ Обробляє натискання на кнопку "Переглянути" і надсилає посилання приватно """
-    callback_data = callback_query.data
-
-    if callback_data.startswith("view_"):
-        url = callback_data.replace("view_", "")
-        await callback_query.message.answer(f"🔗 Ось ваше посилання: {url}")
-        await callback_query.answer()  # Закриваємо повідомлення про натискання
+        await asyncio.sleep(200)
 
 @dp.message(Command("start"))
 async def start_command(message: Message):
-    chat_id = message.chat.id
+    global one_time_message
 
     start_buttons = ['Українською мовою', 'in English']
     keyboard = types.ReplyKeyboardMarkup(
         keyboard=[[types.KeyboardButton(text=button) for button in start_buttons]],
         resize_keyboard=True
     )
+    if int(os.getenv("my_chat_id", 0)) == message.chat.id:
+        if one_time_message:
+            one_time_message.cancel()  # Зупиняємо попередній процес
+        one_time_message = None  # Скидаємо значення
 
-    # Якщо вже запущено завдання для цього користувача, зупиняємо його
-    if chat_id in active_tasks:
-        active_tasks[chat_id].cancel()
-        del active_tasks[chat_id]
-
-    Rewrite_order()
-    await message.answer("Бот запущено", reply_markup=keyboard)
+        Rewrite_order()
+        await message.answer("Бот запущено", reply_markup=keyboard)
+    else:
+        await message.answer("This bot is created for personal use.", reply_markup=keyboard)
 
 @dp.message()
 async def handle_text(message: Message):
-    chat_id = message.chat.id
-
-    if message.text in ['Українською мовою', 'in English']:
-        # Якщо є активний цикл для цього користувача, зупиняємо його
-        if chat_id in active_tasks:
-            active_tasks[chat_id].cancel()
-            del active_tasks[chat_id]
-
-        # Створюємо нове завдання для конкретного користувача
-        active_tasks[chat_id] = asyncio.create_task(check_orders(message, message.text))
+    global one_time_message
+    if int(os.getenv("my_chat_id", 0)) == message.chat.id:
+        if message.text in ['Українською мовою', 'in English']:
+            if one_time_message:  # Якщо є активний цикл, зупиняємо його
+                one_time_message.cancel()
+            one_time_message = asyncio.create_task(check_orders(message, message.text))  # Створюємо новий цикл
+    else:
+        await message.answer("This bot is not for you")
 
 async def main():
     await dp.start_polling(bot)
