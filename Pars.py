@@ -2,13 +2,18 @@ import json
 import cloudscraper
 from bs4 import BeautifulSoup
 from deep_translator import GoogleTranslator
-import time
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+proxy = {
+    'http': os.getenv('HTTP_PROXY'),
+    'https': os.getenv('HTTPS_PROXY')
+}
 
 def collect_orders(scraper= cloudscraper.create_scraper()):
     url = "https://www.upwork.com/nx/search/jobs/?contractor_tier=1,2&is_sts_vector_search_result=false&nav_dir=pop&nbs=1&q=scrape%20data&sort=recency"
-    response = scraper.get(url)
-    time.sleep(5)
+    response = scraper.get(url,proxies=proxy)
     print("Response status:", response.status_code)
 
     new_orders = []
@@ -97,4 +102,3 @@ def translate_message(data, target_language="uk"):
 
     print("Переклад завершено! ✅")
     return translated_list   
-    

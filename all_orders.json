@@ -1,40 +1,5 @@
 [
     {
-        "Name": "Obtaining an Official Company Extract from the South African Registry",
-        "Fixed_price": "Hourly",
-        "Url": "https://www.upwork.com/jobs/Obtaining-Official-Company-Extract-from-the-South-African-Registry_~021895069510526814051/?referrer_url_path=/nx/search/jobs/",
-        "Task": "Hello,\nI am looking for a researcher to obtain an official company extract from the South African company registry to find details about its shareholders and board of Directors.\n\nThanks,\nErik",
-        "Skills_Expertise": " Company Research "
-    },
-    {
-        "Name": "Web Scraping specialist - data needed",
-        "Fixed_price": "Hourly",
-        "Url": "https://www.upwork.com/jobs/Web-span-class-highlight-Scraping-span-specialist-span-class-highlight-data-span-needed_~021895069089806095149/?referrer_url_path=/nx/search/jobs/",
-        "Task": "I need a dataset for an initial MVP validation.  \n\nThe data would come from scraping reddit, google maps reviews (and ratings),  yelp, facebook groups and other websites.\n\nI would prefer to work with someone who would be willing to be involved for longer, possibly be added to the team.\n\nMy tech stack will be using JS (node, react) primarily.",
-        "Skills_Expertise": " Data ExtractionData ScrapingData EngineeringData CollectionData MiningScreen ScrapingWeb Scraping PluginWeb Scraping FrameworkWeb ScrapingETLWeb CrawlingWeb Scraping SoftwareDexi.ioAutomationChatGPT "
-    },
-    {
-        "Name": "Need to run a script both online (with internet) and offline (without internet) as well",
-        "Fixed_price": "Est. budget: $325.00",
-        "Url": "https://www.upwork.com/jobs/Need-run-script-both-online-with-internet-and-offline-without-internet-well_~021895069020707604323/?referrer_url_path=/nx/search/jobs/",
-        "Task": "Do you have any experience with offline apps then the work is for you . \n\nWork Details : The work will run offline in Mobile or Tablet without internet connection, and when internet connection is restored, the work will automatically sync to the database with the relevant details. \n\n\n\nI need to run a script both online (with internet) and offline (without internet) as well. \n\n\n\nTo run offline, the following tasks are needed: \n\nThere are a few employees who work outside and they fill out the work reports using a tablet with the help of internet .Our backend system contains a large number of customers, a few employees, and a number of locations. We may create new customers or tasks every day. All those details should be automatically synced when the tablet is online and saved to the tablet's local storage for offline work. After the work is completed, all the data in the local storage should be moved to a database when the tablet is connected to the internet. this is the work flow that I needed. \n\n\nCurrently, I am using the online method for my tablet and that script is done in Laravel . There is no internet access at many of the locations. That's why I'm considering Offline.",
-        "Skills_Expertise": " Mobile App DevelopmentLaravelPHPPythonJavaScript "
-    },
-    {
-        "Name": "Cleanup and add 2 new features to our node-based chrome extension",
-        "Fixed_price": "Est. budget: $200.00",
-        "Url": "https://www.upwork.com/jobs/Cleanup-and-add-new-features-our-node-based-chrome-extension_~021895065829935778567/?referrer_url_path=/nx/search/jobs/",
-        "Task": "I have an existing Chrome extension. This chrome extension today provides an integration between my SaaS app, and the user's browser to allow us to copy cookies for automation, etc. \n\nThis Chrome extension part works OK. But, it needs a bit of a UX cleanup. It's in Dark mode only (I think), and the color palette used by the original developer isn't very good. (not higher contrast). So, this needs to be fixed.\n\nBefore we had the Plugin, we had Javascript bookmarklets that would let people scrape certain things out of their social accounts and paste them into spreadsheets.  This allowed us to accelerate and simplify some project management tasks. \n\nI'd like to \"take the next step\" with this, and integrate these bookmarklets into the chrome extension. \n\nBy doing so, you'll also need to do a small integration with our API. You'll:\n\n1) need to query our API for a list of destinations available for the data from the bookmarklets. \n2) You will give the user of the Chrome extension the ability to select their destination endpoint. \n3) You will need to modify the bookmarkets to push the data into these destination endpoints.\n4) You will need to ensure you can report on the status on the extension.\n\nI'd like to move on this quickly and get this functionality into our extension sooner rather than later. \n\nTo be considered, please reply and tell me your experience with extensions like this, scraping in general, and your favorite fruit and why.",
-        "Skills_Expertise": " Google Chrome ExtensionJavaScriptNode.jsCSSAPI "
-    },
-    {
-        "Name": "Amazon & Noon Saudi Product Research Specialist Needed",
-        "Fixed_price": "Est. budget: $2,500.00",
-        "Url": "https://www.upwork.com/jobs/Amazon-Noon-Saudi-Product-Research-Specialist-Needed_~021895065441397622627/?referrer_url_path=/nx/search/jobs/",
-        "Task": "This is a research project (not commercial) for an economics purpose. \n\nI am looking for someone who is able to use Amazon Seller partner API to call on product research for current listings within Amazon SA and Noon (for the Saudi market). The idea is similar to create an online dashboard for all items similar to the Competitive Intelligence tool at JungleScout, that is currently only available for the US market - while the use is mostly for amazon seller this one is more about data gathering and many elements there is not needed, and since it not currently offered for many markets may require data aggregation knowledge since it will have to be linked to the keywords in the Haramonized HS code excel sheet (see attached list)\n\n\"https://www.junglescout.com/features/amazon-competitive-intelligence-tool/\" \n\nThe output is a dashboard which contain market analysis, price trends, total demand at the product level (not store or seller level). This could be done through amazon scout (amazon scout works in Saudi but not fully for all products) as such potentially this may need separate and tailored API calling",
-        "Skills_Expertise": " Data ExtractionData ScrapingData IntegrationWeb Scraping FrameworkData EntryAPI IntegrationSeleniumScrapyMarket AnalysisMarket ResearchData AnalysisAmazon FBA Product ResearchAmazon API GatewayAmazon Product Research "
-    },
-    {
         "Name": "Data scraper",
         "Fixed_price": "Hourly",
         "Url": "https://www.upwork.com/jobs/span-class-highlight-Data-span-span-class-highlight-scraper-span_~021895060355585918819/?referrer_url_path=/nx/search/jobs/",
@@ -68,5 +33,40 @@
         "Url": "https://www.upwork.com/jobs/Javascript-Scrapfly-Heroku-Site-span-class-highlight-Scraping-span-Project_~021895051300133017643/?referrer_url_path=/nx/search/jobs/",
         "Task": "We’re looking for a Web Scraping & Automation JS Engineer to expand existing web scraping framework across multiple e-commerce websites.\nYou’ll be working with a solid codebase that we’ve already built on Scrapfly API.\nWe need someone to adapt, deploy, and debug it for new sites while improving its efficiency.\n\nResponsibilities:\nAdapt & extend our existing web scraping framework for new sites.\nDeploy & maintain scrapers on Heroku\nDebug & optimize scraping performance, handling infinite scroll, JavaScript rendering, and anti-bot measures.\nImplement fixes & iterate on selectors, scrolling logic, and data extraction as sites evolve.\n\nWhat You’ll Need:\nProven experience with web scraping using Cheerio, Puppeteer, Selenium, or Scrapfly.\nStrong knowledge of JavaScript/Node.js and handling dynamic sites.\nExperience deploying scrapers to Heroku or similar cloud platforms.\nFamiliarity with MySQL (or similar databases) for data storage.\nAbility to debug quickly and iterate on failed scrapes.\n(Bonus) Experience handling CAPTCHAs, proxies, and anti-bot measures.\n\nInclude a relevant Github repo link",
         "Skills_Expertise": " Data ScrapingJavaScriptHerokuNode.jsAPI "
+    },
+    {
+        "Name": "Lead Generation Specialist for Salt Importing",
+        "Fixed_price": "Est. budget: $100.00",
+        "Url": "https://www.upwork.com/jobs/Lead-Generation-Specialist-for-Salt-Importing_~021895078908913208392/?referrer_url_path=/nx/search/jobs/",
+        "Task": "We are seeking an experienced lead generation specialist to identify and acquire leads for salt importing in European countries, the USA, and the MENA region. The ideal candidate will have a proven track record in lead generation, particularly in the import/export sector. Your task will involve researching potential clients, establishing connections, and nurturing relationships to ultimately drive sales. If you have a strong understanding of the salt market and excellent communication skills, we’d love to hear from you!",
+        "Skills_Expertise": " Data EntryData ScrapingMicrosoft ExcelLead Generation "
+    },
+    {
+        "Name": "List of 300 companies, w/ CEO and contact info for mid size companies who are leasing in San Diego",
+        "Fixed_price": "Est. budget: $35.00",
+        "Url": "https://www.upwork.com/jobs/List-300-companies-CEO-and-contact-info-for-mid-size-companies-who-are-leasing-San-Diego_~021895007734262877256/?referrer_url_path=/nx/search/jobs/",
+        "Task": "Create a list of 300 companies with 11-100 employees in San Diego California. The specific areas I need are Encinitas, Solana Beach, Del Mar, La Jolla, and Kearny Mesa.\n\nI need each companies address, CEO’s name, phone number, and email.\n\nCEO MUST BE FROM SAN DIEGO",
+        "Skills_Expertise": " Data EntryData ScrapingLead GenerationProspect ListList BuildingCompany Research "
+    },
+    {
+        "Name": "Web Scraping and Email Outreach Specialist",
+        "Fixed_price": "Est. budget: $20.00",
+        "Url": "https://www.upwork.com/jobs/Web-span-class-highlight-Scraping-span-and-Email-Outreach-Specialist_~021895075410389716040/?referrer_url_path=/nx/search/jobs/",
+        "Task": "We are looking for a skilled freelancer to assist with web scraping tasks and subsequent email outreach. The ideal candidate will extract data from specified websites and compile it into organized lists and send an email. \n1. enter to this url and scrape all the companies: https://www.holded.com/es/asesorias/buscar/resultados\n2. Get Name, location, emails, phone, and web. Save in a csv. \n3. Send and email: example: https://www.holded.com/es/asesorias/monshot",
+        "Skills_Expertise": " Data ScrapingData MiningData EntryLead Generation "
+    },
+    {
+        "Name": "CV Scraping for UK-Based Children's Education Candidates",
+        "Fixed_price": "Est. budget: $5.00",
+        "Url": "https://www.upwork.com/jobs/span-class-highlight-Scraping-span-for-Based-Children-Education-Candidates_~021895029985108805475/?referrer_url_path=/nx/search/jobs/",
+        "Task": "We are seeking a skilled data scraper to extract information from CV Library, specifically targeting candidates currently employed in the children's education sector within the UK. The ideal freelancer should have experience with web scraping, data collection, and familiarity with the CV Library platform. You will compile a list of candidates including their qualifications and contact information. Attention to detail and the ability to deliver accurate results promptly are essential. If you are proficient in these areas, we would love to hear from you!",
+        "Skills_Expertise": " Data EntryData ScrapingCommunicationsEnglish "
+    },
+    {
+        "Name": "B2B Customer Data Scraping for Candle Business",
+        "Fixed_price": "Est. budget: $50.00",
+        "Url": "https://www.upwork.com/jobs/B2B-Customer-span-class-highlight-Data-span-span-class-highlight-Scraping-span-for-Candle-Business_~021895073466736953187/?referrer_url_path=/nx/search/jobs/",
+        "Task": "Collect high-quality contact data of potential B2B customers (touristic and gothic stores) across California, Virginia, Washington (USA), Greece, Spain, Germany, Switzerland, Austria, and the United Kingdom.\n\nThis data will be used for B2B outreach to sell candles, including touristic candles and gothic candles.\n\nFind the details briefing and all relevant files in the attachment.\n\nI am only looking to work with reliable professionals who can deliver high-quality results on time. I expect accuracy, efficiency, and professionalism from start to finish.",
+        "Skills_Expertise": " Data ScrapingData MiningData EntryLead GenerationList BuildingMicrosoft Excel "
     }
 ]
