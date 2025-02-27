@@ -13,8 +13,7 @@ proxy = {
 
 
 def collect_orders(scraper= cloudscraper.create_scraper()):
-    url = "https://www.upwork.com/nx/search/jobs/?contractor_tier=1,2&is_sts_vector_search_result=false&nav_dir=pop&nbs=1&q=scrape%20data&sort=recency"
-    response = scraper.get(url,proxies=proxy)
+    response = scraper.get(token=os.getenv("url"),proxies=proxy)
     print("Response status:", response.status_code)
 
     new_orders = []
