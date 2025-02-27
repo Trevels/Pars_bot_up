@@ -11,6 +11,7 @@ proxy = {
     'https': os.getenv('HTTPS_PROXY')
 }
 
+
 def collect_orders(scraper= cloudscraper.create_scraper()):
     url = "https://www.upwork.com/nx/search/jobs/?contractor_tier=1,2&is_sts_vector_search_result=false&nav_dir=pop&nbs=1&q=scrape%20data&sort=recency"
     response = scraper.get(url,proxies=proxy)
@@ -19,7 +20,7 @@ def collect_orders(scraper= cloudscraper.create_scraper()):
     new_orders = []
     
     try:#для постійной обробки працює некорктно мб try
-        soup = BeautifulSoup(response.text, 'lxml')
+        soup = BeautifulSoup(response.text, "html.parser")
         blook = soup.find('div', class_='span-12 span-lg-9')
         all_orders = blook.find_all("article", class_="job-tile cursor-pointer px-md-4 air3-card air3-card-list px-4x")
 
@@ -45,7 +46,7 @@ def collect_orders(scraper= cloudscraper.create_scraper()):
                 'Fixed_price': Fixed_price,
                 'Url': f"https://www.upwork.com{orders.find_all('div', class_='air3-line-clamp is-clamped')[0].find('a').get('href')}",
                 'Task': orders.find_all("div", class_="air3-line-clamp is-clamped")[1].text.strip(),
-                'Skills_Expertise': orders.find("div", class_="air3-token-container").text
+                'Skills_Expertise': orders.find("div", class_="air3-token-container").text if orders.find("div", class_="air3-token-container") else ""
             }
 
             if data["Name"] not in existing_names:  # Якщо замовлення нове
@@ -101,4 +102,5 @@ def translate_message(data, target_language="uk"):
         translated_list.append(translated_item)  # Додаємо перекладений елемент у список
 
     print("Переклад завершено! ✅")
-    return translated_list   
+    return translated_list
+  
