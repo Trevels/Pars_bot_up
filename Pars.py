@@ -13,7 +13,7 @@ proxy = {
 
 
 def collect_orders(scraper= cloudscraper.create_scraper()):
-    response = scraper.get(token=os.getenv("url"),proxies=proxy)
+    response = scraper.get(url=os.getenv("url"),proxies=proxy)
     print("Response status:", response.status_code)
 
     new_orders = []
