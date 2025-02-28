@@ -32,7 +32,7 @@ def collect_orders(scraper= cloudscraper.create_scraper()):
         except (FileNotFoundError, json.JSONDecodeError):
             existing_orders = []
 
-        existing_names = {order["Name"] for order in existing_orders}  # Множина для швидкої перевірки
+        existing_names = {order["Url"] for order in existing_orders}  # Множина для швидкої перевірки
 
 
         for orders in all_orders:
@@ -48,7 +48,7 @@ def collect_orders(scraper= cloudscraper.create_scraper()):
                 'Skills_Expertise': orders.find("div", class_="air3-token-container").text if orders.find("div", class_="air3-token-container") else ""
             }
 
-            if data["Name"] not in existing_names:  # Якщо замовлення нове
+            if data["Url"] not in existing_names:  # Якщо замовлення нове
                 new_orders.append(data)
                 existing_orders.append(data)  # Додаємо його в загальний список
 
